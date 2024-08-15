@@ -1,0 +1,9 @@
+docker run -d --name log-extractor \
+  -v /mnt/usb-01194a5c-f2aa-420c-9d41-a84ded34a11b:/mnt/usb \
+  -v /var/log:/var/log \
+  -v /dev/log:/dev/log \
+  -v /var/lib/docker/containers:/var/lib/docker/containers \
+  -e MAX_LINES=500 \
+  -e DAYS_BACK=3 \
+  log-extractor-image
+
